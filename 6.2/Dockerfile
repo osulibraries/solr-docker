@@ -1,4 +1,4 @@
-# osul/solr:latest
+# osul/solr:6.2
 FROM solr:6.2
 MAINTAINER Corey Hinshaw <hinshaw.25@osu.edu>
 

@@ -38,7 +38,7 @@ core name to the `variables` key:
 
 When the Solr image starts, it will clone a copy of the project under test,
 check out the current commit, and create a new Solr core using the
-configuration files in the `SOLR_CONFIG_DIR`. The Solr core withh be available
+configuration files in the `SOLR_CONFIG_DIR`. The Solr core will be available
 to the application at: `http://osul__solr:8983/solr/mycore`
 
 
