@@ -1,17 +1,17 @@
 #!/bin/bash
 set -e
 
-# Exit if the CI environment vriables are not set
-for var in SOLR_CORE_NAME SOLR_CONFIG_DIR CI_BUILD_REPO CI_BUILD_REF ; do
+# Exit if the CI environment variables are not set
+for var in SOLR_CORE_NAME SOLR_CONFIG_DIR CI_REPOSITORY_URL CI_COMMIT_SHA ; do
   if [ -z "${!var}" ] ; then
     skip_solr_ci="true"
   fi
 done
 
 if [ -z "$skip_solr_ci" ] ; then
-  git clone $CI_BUILD_REPO /tmp/repo
+  git clone $CI_REPOSITORY_URL /tmp/repo
   cd /tmp/repo
-  git checkout $CI_BUILD_REF
+  git checkout $CI_COMMIT_SHA
 
   echo "Creating Solr core: $SOLR_CORE_NAME..."
   coresdir="/opt/solr/server/solr/mycores"
